@@ -33,20 +33,8 @@ export class UserService {
     return this.prisma.user.findMany();
   }
 
-  async searchName(): Promise<User> {
-    return null;
-  }
-
-  async searchEmail(): Promise<User> {
-    return null;
-  }
-
-  async searchPhone(): Promise<User> {
-    return null;
-  }
-
-  async search(params: { where: Prisma.UserWhereInput }): Promise<User[]> {
-    const { where } = params;
+  async search(query: { where?: Prisma.UserWhereInput }): Promise<User[]> {
+    const { where } = query;
     return this.prisma.user.findMany({
       where,
     });

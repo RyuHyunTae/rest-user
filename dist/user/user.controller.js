@@ -33,6 +33,9 @@ let UserController = class UserController {
     async allUser() {
         return this.userService.allUser();
     }
+    searchId(id) {
+        return this.userService.search({ where: { id: Number(id) } });
+    }
     searchName(name) {
         return this.userService.search({ where: { name: { contains: name } } });
     }
@@ -71,6 +74,13 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "allUser", null);
+__decorate([
+    (0, common_1.Get)('id'),
+    __param(0, (0, common_1.Query)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], UserController.prototype, "searchId", null);
 __decorate([
     (0, common_1.Get)('name'),
     __param(0, (0, common_1.Query)('name')),

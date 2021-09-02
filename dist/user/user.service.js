@@ -36,17 +36,8 @@ let UserService = class UserService {
     async allUser() {
         return this.prisma.user.findMany();
     }
-    async searchName() {
-        return null;
-    }
-    async searchEmail() {
-        return null;
-    }
-    async searchPhone() {
-        return null;
-    }
-    async search(params) {
-        const { where } = params;
+    async search(query) {
+        const { where } = query;
         return this.prisma.user.findMany({
             where,
         });

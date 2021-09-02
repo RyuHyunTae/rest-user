@@ -10,10 +10,7 @@ export declare class UserService {
         data: Prisma.UserUpdateInput;
     }): Promise<User>;
     allUser(): Promise<User[]>;
-    searchName(): Promise<User>;
-    searchEmail(): Promise<User>;
-    searchPhone(): Promise<User>;
-    search(params: {
-        where: Prisma.UserWhereInput;
+    search(query: {
+        where?: Prisma.UserWhereInput;
     }): Promise<User[]>;
 }

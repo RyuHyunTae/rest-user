@@ -40,6 +40,11 @@ export class UserController {
     return this.userService.allUser();
   }
 
+  @Get('id')
+  searchId(@Query('id') id: Number) {
+    return this.userService.search({ where: { id: Number(id) } });
+  }
+
   @Get('name')
   searchName(@Query('name') name: string) {
     return this.userService.search({ where: { name: { contains: name } } });
