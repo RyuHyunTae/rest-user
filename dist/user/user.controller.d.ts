@@ -11,7 +11,7 @@ export declare class UserController {
         id: Number;
     }): Promise<void>;
     allUser(): Promise<User[]>;
-    searchId(id: Number): Promise<User[]>;
+    searchId(id: Number): Promise<User>;
     searchName(name: string): Promise<User[]>;
     searchEmail(email: string): Promise<User[]>;
     searchPhone(phone: string): Promise<User[]>;

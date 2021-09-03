@@ -34,7 +34,7 @@ let UserController = class UserController {
         return this.userService.allUser();
     }
     searchId(id) {
-        return this.userService.search({ where: { id: Number(id) } });
+        return this.userService.searchId({ where: { id: Number(id) } });
     }
     searchName(name) {
         return this.userService.search({ where: { name: { contains: name } } });

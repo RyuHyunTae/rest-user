@@ -42,7 +42,7 @@ export class UserController {
 
   @Get('id')
   searchId(@Query('id') id: Number) {
-    return this.userService.search({ where: { id: Number(id) } });
+    return this.userService.searchId({ where: { id: Number(id) } });
   }
 
   @Get('name')

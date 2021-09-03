@@ -42,6 +42,13 @@ let UserService = class UserService {
             where,
         });
     }
+    async searchId(query) {
+        const { where } = query;
+        console.log(where);
+        return this.prisma.user.findUnique({
+            where: { id: Number(where.id) },
+        });
+    }
 };
 UserService = __decorate([
     (0, common_1.Injectable)(),

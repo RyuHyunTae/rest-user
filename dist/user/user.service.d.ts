@@ -13,4 +13,7 @@ export declare class UserService {
     search(query: {
         where?: Prisma.UserWhereInput;
     }): Promise<User[]>;
+    searchId(query: {
+        where?: Prisma.UserWhereInput;
+    }): Promise<User>;
 }

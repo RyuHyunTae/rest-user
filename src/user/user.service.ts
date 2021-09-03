@@ -39,4 +39,11 @@ export class UserService {
       where,
     });
   }
+
+  async searchId(query: { where?: Prisma.UserWhereInput }): Promise<User> {
+    const { where } = query;
+    return this.prisma.user.findUnique({
+      where: { id: Number(where.id) },
+    });
+  }
 }
